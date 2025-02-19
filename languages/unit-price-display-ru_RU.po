@@ -43,6 +43,33 @@ msgstr "за упаковку"
 msgid "per set"
 msgstr "за набор"
 
+msgid "per 100 grams"
+msgstr "за 100 грамм"
+
+msgid "per 200 grams"
+msgstr "за 200 грамм"
+
+msgid "per 300 grams"
+msgstr "за 300 грамм"
+
+msgid "per 400 grams"
+msgstr "за 400 грамм"
+
+msgid "per 500 grams"
+msgstr "за 500 грамм"
+
+msgid "per 600 grams"
+msgstr "за 600 грамм"
+
+msgid "per 700 grams"
+msgstr "за 700 грамм"
+
+msgid "per 800 grams"
+msgstr "за 800 грамм"
+
+msgid "per 900 grams"
+msgstr "за 900 грамм"
+
 msgid "Price is %s"
 msgstr "Цена указана %s"
 
