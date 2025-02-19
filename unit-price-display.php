@@ -38,8 +38,11 @@ if (!class_exists('Unit_Price_Display')) {
             add_action('woocommerce_process_product_meta', array($this, 'save_unit_measure_field'));
             
             // Выводим информацию после короткого описания
-            add_action('woocommerce_after_shop_loop_item_title', array($this, 'display_unit_measure'), 15);
-            add_action('woocommerce_single_product_summary', array($this, 'display_unit_measure'), 21);
+            add_action('woocommerce_after_shop_loop_item', array($this, 'display_unit_measure'), 15);
+            add_action('woocommerce_single_product_summary', array($this, 'display_unit_measure'), 25);
+            
+            // Подключаем стили
+            add_action('wp_enqueue_scripts', array($this, 'enqueue_styles'));
             
             // Загружаем переводы
             load_plugin_textdomain('unit-price-display', false, dirname(plugin_basename(__FILE__)) . '/languages');
@@ -78,10 +81,19 @@ if (!class_exists('Unit_Price_Display')) {
             update_post_meta($post_id, '_unit_measure', $unit_measure);
         }
 
+        public function enqueue_styles() {
+            wp_enqueue_style(
+                'unit-price-display',
+                plugins_url('assets/css/style.css', __FILE__),
+                array(),
+                '1.0.0'
+            );
+        }
+
         public function display_unit_measure() {
             global $product;
             
-            if (!$product) {
+            if (!$product || !is_object($product)) {
                 return;
             }
 
