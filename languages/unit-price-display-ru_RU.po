@@ -1,0 +1,26 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Unit Price Display for WooCommerce\n"
+"POT-Creation-Date: 2024-03-19 10:00+0000\n"
+"PO-Revision-Date: 2024-03-19 10:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Unit Measure"
+msgstr "Единица измерения"
+
+msgid "например: кг, шт, гр"
+msgstr "например: кг, шт, гр"
+
+msgid "Укажите единицу измерения для отображения после цены"
+msgstr "Укажите единицу измерения для отображения после цены"
+
+msgid "Цена указана за %s"
+msgstr "Цена указана за %s"
+
+msgid "Unit Price Display requires WooCommerce to be installed and active."
+msgstr "Для работы Unit Price Display требуется установленный и активированный WooCommerce." 
