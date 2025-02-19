@@ -1,49 +1,79 @@
-Unit Price Display for WooCommerce
+=== Unit Price Display for WooCommerce ===
+Contributors: WebRainbow
+Tags: woocommerce, price, unit, measure, product, shop, ecommerce
+Requires at least: 5.0
+Tested up to: 6.4
+Stable tag: 1.0.0
+Requires PHP: 7.2
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Contributors: WebRainbowTags: woocommerce, price, unit, measureRequires at least: 5.0Tested up to: 6.4Stable tag: 1.0.0Requires PHP: 7.2License: GPLv2 or laterLicense URI: https://www.gnu.org/licenses/gpl-2.0.html
+Add unit of measurement information after product prices in your WooCommerce store.
 
-Adds unit of measurement information after the short product description in WooCommerce.
+== Description ==
 
-Description
+Unit Price Display for WooCommerce enhances your product displays by adding unit of measurement information (kg, pcs, g, etc.) after the price.
 
-Unit Price Display for WooCommerce allows you to add unit of measurement information (kg, pcs, g, etc.) after the short product description.
+= Key Features =
 
-Key Features:
+* Add unit of measurement for each product
+* Display information on product page and in catalog
+* Multilingual support with built-in translations
+* Easy setup and configuration
+* Clean, professional design
+* Fully responsive
 
-Add a unit of measurement for each product
+= Perfect For =
 
-Display the information on the product page and in the catalog
+* Food and grocery stores
+* Construction materials shops
+* Fabric and textile stores
+* Bulk product retailers
+* Any store selling products by weight, length, or units
 
-Multilingual support
+= Professional Integration =
 
-Easy setup
+* Seamless WooCommerce integration
+* Compatible with most WordPress themes
+* Performance optimized
+* Clean code following WordPress standards
 
-Installation
+== Installation ==
 
-Upload the plugin to the /wp-content/plugins/ directory.
+1. Upload the plugin files to `/wp-content/plugins/unit-price-display`
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Edit any product to set its unit of measurement
 
-Activate the plugin through the ‘Plugins’ menu in WordPress.
+== Frequently Asked Questions ==
 
-When editing a product, specify the unit of measurement in the corresponding field.
+= Where do I set the unit of measurement? =
 
-Frequently Asked Questions
+When editing a product, look for the "Unit of Measurement" field in the General tab.
 
-Where do I specify the unit of measurement?When editing a product, a "Unit of Measurement" field will appear in the "General" section.
+= Is it multilingual? =
 
-Screenshots
+Yes! The plugin supports translations and includes Russian language by default. Other languages can be easily added.
 
-Product settings
+= Will it slow down my site? =
 
-Display on the product page
+No, the plugin is lightweight and optimized for performance.
 
-Changelog
+== Screenshots ==
 
-1.0.0
+1. Unit selection in product settings
+2. Display on product page
+3. Display in product catalog
 
-Initial release
+== Changelog ==
 
-Upgrade Notice
+= 1.0.0 =
+* Initial release
 
-1.0.0
+== Upgrade Notice ==
 
-First version of the plugin
+= 1.0.0 =
+First public release
+
+== Support ==
+
+For support please visit https://webrainbow.net/support

@@ -1,9 +1,11 @@
 <?php
 /**
  * Plugin Name: Unit Price Display for WooCommerce
- * Description: Добавляет информацию о единице измерения после короткого описания продукта
+ * Plugin URI: #
+ * Description: Adds unit of measurement information after product price
  * Version: 1.0.0
- * Author:WebRainbow
+ * Author: WebRainbow
+ * Author URI: #
  * Text Domain: unit-price-display
  * Domain Path: /languages
  * Requires at least: 5.0
@@ -25,26 +27,26 @@ if (!class_exists('Unit_Price_Display')) {
         }
 
         public function init() {
-            // Проверяем, активирован ли WooCommerce
+            // Check if WooCommerce is active
             if (!class_exists('WooCommerce')) {
                 add_action('admin_notices', array($this, 'woocommerce_missing_notice'));
                 return;
             }
 
-            // Добавляем поле в настройки продукта
+            // Add field to product settings
             add_action('woocommerce_product_options_general_product_data', array($this, 'add_unit_measure_field'));
             
-            // Сохраняем значение поля
+            // Save field value
             add_action('woocommerce_process_product_meta', array($this, 'save_unit_measure_field'));
             
-            // Выводим информацию после цены
+            // Display information after price
             add_action('woocommerce_after_shop_loop_item_title', array($this, 'display_unit_measure'), 15);
             add_action('woocommerce_get_price_html', array($this, 'append_unit_to_price'), 100, 2);
             
-            // Подключаем стили
+            // Enqueue styles
             add_action('wp_enqueue_scripts', array($this, 'enqueue_styles'));
             
-            // Загружаем переводы
+            // Load translations
             load_plugin_textdomain('unit-price-display', false, dirname(plugin_basename(__FILE__)) . '/languages');
         }
 
@@ -59,19 +61,19 @@ if (!class_exists('Unit_Price_Display')) {
         public function add_unit_measure_field() {
             woocommerce_wp_select(array(
                 'id' => '_unit_measure',
-                'label' => __('Единица измерения', 'unit-price-display'),
+                'label' => __('Unit of Measurement', 'unit-price-display'),
                 'desc_tip' => true,
-                'description' => __('Выберите единицу измерения для отображения после цены', 'unit-price-display'),
+                'description' => __('Select the unit of measurement to display after the price', 'unit-price-display'),
                 'options' => array(
-                    '' => __('Выберите...', 'unit-price-display'),
-                    'штуку' => __('за штуку', 'unit-price-display'),
-                    'килограмм' => __('за килограмм', 'unit-price-display'),
-                    'грамм' => __('за грамм', 'unit-price-display'),
-                    'метр' => __('за метр', 'unit-price-display'),
-                    'литр' => __('за литр', 'unit-price-display'),
-                    'пару' => __('за пару', 'unit-price-display'),
-                    'упаковку' => __('за упаковку', 'unit-price-display'),
-                    'набор' => __('за набор', 'unit-price-display')
+                    '' => __('Select...', 'unit-price-display'),
+                    'piece' => __('per piece', 'unit-price-display'),
+                    'kilogram' => __('per kilogram', 'unit-price-display'),
+                    'gram' => __('per gram', 'unit-price-display'),
+                    'meter' => __('per meter', 'unit-price-display'),
+                    'liter' => __('per liter', 'unit-price-display'),
+                    'pair' => __('per pair', 'unit-price-display'),
+                    'pack' => __('per pack', 'unit-price-display'),
+                    'set' => __('per set', 'unit-price-display')
                 )
             ));
         }
@@ -99,7 +101,7 @@ if (!class_exists('Unit_Price_Display')) {
             
             if (!empty($unit_measure)) {
                 return $price_html . '<div class="unit-measure-info">' . 
-                       esc_html(sprintf(__('Цена указана %s', 'unit-price-display'), $unit_measure)) . 
+                       esc_html(sprintf(__('Price is %s', 'unit-price-display'), $unit_measure)) . 
                        '</div>';
             }
             
@@ -115,9 +117,9 @@ if (!class_exists('Unit_Price_Display')) {
 
             $unit_measure = get_post_meta($product->get_id(), '_unit_measure', true);
             
-            if (!empty($unit_measure) && !is_product()) { // Показываем только в каталоге
+            if (!empty($unit_measure) && !is_product()) {
                 echo '<div class="unit-measure-info">';
-                echo esc_html(sprintf(__('Цена указана %s', 'unit-price-display'), $unit_measure));
+                echo esc_html(sprintf(__('Price is %s', 'unit-price-display'), $unit_measure));
                 echo '</div>';
             }
         }
