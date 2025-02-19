@@ -1,12 +1,12 @@
 .unit-measure-info {
-    margin: 10px 0;
+    margin: 5px 0;
     font-size: 0.9em;
     color: #666;
     font-style: italic;
     clear: both;
     display: block;
     width: 100%;
-    padding: 5px 0;
+    padding: 2px 0;
 }
 
 /* Стили для страницы каталога */
@@ -16,6 +16,12 @@
 
 /* Стили для страницы товара */
 .single-product .unit-measure-info {
-    margin: 15px 0;
-    font-size: 1em;
+    margin: 5px 0;
+    font-size: 0.95em;
+    text-align: left;
+}
+
+/* Стили для цены с единицей измерения */
+.price + .unit-measure-info {
+    margin-top: 0;
 } 

@@ -37,9 +37,9 @@ if (!class_exists('Unit_Price_Display')) {
             // Сохраняем значение поля
             add_action('woocommerce_process_product_meta', array($this, 'save_unit_measure_field'));
             
-            // Выводим информацию после короткого описания
-            add_action('woocommerce_after_shop_loop_item', array($this, 'display_unit_measure'), 15);
-            add_action('woocommerce_single_product_summary', array($this, 'display_unit_measure'), 25);
+            // Выводим информацию после цены
+            add_action('woocommerce_after_shop_loop_item_title', array($this, 'display_unit_measure'), 15);
+            add_action('woocommerce_get_price_html', array($this, 'append_unit_to_price'), 100, 2);
             
             // Подключаем стили
             add_action('wp_enqueue_scripts', array($this, 'enqueue_styles'));
@@ -90,6 +90,22 @@ if (!class_exists('Unit_Price_Display')) {
             );
         }
 
+        public function append_unit_to_price($price_html, $product) {
+            if (!$product || !is_object($product)) {
+                return $price_html;
+            }
+
+            $unit_measure = get_post_meta($product->get_id(), '_unit_measure', true);
+            
+            if (!empty($unit_measure)) {
+                return $price_html . '<div class="unit-measure-info">' . 
+                       esc_html(sprintf(__('Цена указана %s', 'unit-price-display'), $unit_measure)) . 
+                       '</div>';
+            }
+            
+            return $price_html;
+        }
+
         public function display_unit_measure() {
             global $product;
             
@@ -99,7 +115,7 @@ if (!class_exists('Unit_Price_Display')) {
 
             $unit_measure = get_post_meta($product->get_id(), '_unit_measure', true);
             
-            if (!empty($unit_measure)) {
+            if (!empty($unit_measure) && !is_product()) { // Показываем только в каталоге
                 echo '<div class="unit-measure-info">';
                 echo esc_html(sprintf(__('Цена указана %s', 'unit-price-display'), $unit_measure));
                 echo '</div>';
