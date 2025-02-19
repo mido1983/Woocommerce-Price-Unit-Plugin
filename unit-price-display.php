@@ -54,12 +54,22 @@ if (!class_exists('Unit_Price_Display')) {
         }
 
         public function add_unit_measure_field() {
-            woocommerce_wp_text_input(array(
+            woocommerce_wp_select(array(
                 'id' => '_unit_measure',
-                'label' => __('Unit Measure', 'unit-price-display'),
-                'placeholder' => __('например: кг, шт, гр', 'unit-price-display'),
+                'label' => __('Единица измерения', 'unit-price-display'),
                 'desc_tip' => true,
-                'description' => __('Укажите единицу измерения для отображения после цены', 'unit-price-display')
+                'description' => __('Выберите единицу измерения для отображения после цены', 'unit-price-display'),
+                'options' => array(
+                    '' => __('Выберите...', 'unit-price-display'),
+                    'штуку' => __('за штуку', 'unit-price-display'),
+                    'килограмм' => __('за килограмм', 'unit-price-display'),
+                    'грамм' => __('за грамм', 'unit-price-display'),
+                    'метр' => __('за метр', 'unit-price-display'),
+                    'литр' => __('за литр', 'unit-price-display'),
+                    'пару' => __('за пару', 'unit-price-display'),
+                    'упаковку' => __('за упаковку', 'unit-price-display'),
+                    'набор' => __('за набор', 'unit-price-display')
+                )
             ));
         }
 
@@ -79,7 +89,7 @@ if (!class_exists('Unit_Price_Display')) {
             
             if (!empty($unit_measure)) {
                 echo '<div class="unit-measure-info">';
-                echo esc_html(sprintf(__('Цена указана за %s', 'unit-price-display'), $unit_measure));
+                echo esc_html(sprintf(__('Цена указана %s', 'unit-price-display'), $unit_measure));
                 echo '</div>';
             }
         }

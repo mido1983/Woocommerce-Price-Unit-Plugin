@@ -10,17 +10,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Unit Measure"
+msgid "Единица измерения"
 msgstr "Единица измерения"
 
 msgid "например: кг, шт, гр"
 msgstr "например: кг, шт, гр"
 
-msgid "Укажите единицу измерения для отображения после цены"
-msgstr "Укажите единицу измерения для отображения после цены"
+msgid "Выберите единицу измерения для отображения после цены"
+msgstr "Выберите единицу измерения для отображения после цены"
 
-msgid "Цена указана за %s"
-msgstr "Цена указана за %s"
+msgid "Выберите..."
+msgstr "Выберите..."
+
+msgid "за штуку"
+msgstr "за штуку"
+
+msgid "за килограмм"
+msgstr "за килограмм"
+
+msgid "за грамм"
+msgstr "за грамм"
+
+msgid "за метр"
+msgstr "за метр"
+
+msgid "за литр"
+msgstr "за литр"
+
+msgid "за пару"
+msgstr "за пару"
+
+msgid "за упаковку"
+msgstr "за упаковку"
+
+msgid "за набор"
+msgstr "за набор"
+
+msgid "Цена указана %s"
+msgstr "Цена указана %s"
 
 msgid "Unit Price Display requires WooCommerce to be installed and active."
 msgstr "Для работы Unit Price Display требуется установленный и активированный WooCommerce." 
